@@ -1,0 +1,3 @@
+Make a calander in node that displays the current month.
+
+Use zeller's congruence.
