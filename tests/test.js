@@ -64,6 +64,12 @@ describe("zeller's congruence", () => {
 
     expect(mod).to.equal(2011);
   });
+
+  it('returns 2013 for march, 2013', () => {
+    const mod = zellars.modifiedYear(2013, 3);
+
+    expect(mod).to.equal(2013);
+  });
 });
     // .modifiedYear
     // 2000, 1 === 1999
