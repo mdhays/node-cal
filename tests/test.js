@@ -14,37 +14,22 @@ describe('cal', () => {
 });
 
 describe("zeller's congruence", () => {
-  var zellars = {};
-    zellars.modifiedMonth = function(year, month) {
-        if(month <= 2) {
-          return month + 12;
-        } else {
-          return month;
-        }
-    };
-
-    zellars.modifiedYear = function (year, month) {
-      if(month <= 2) {
-        return year - 1;
-      } else {
-        return year;
-      }
-    };
+  const zellers = require('../lib/zellers.js')
 
   it('returns 13 for January', () => {
-      const mod = zellars.modifiedMonth(2012, 1);
+      const mod = zellers.modifiedMonth(1);
 
       expect(mod).to.equal(13)
   });
 
   it('returns 14 for february', () => {
-    const mod = zellars.modifiedMonth(2012, 2);
+    const mod = zellers.modifiedMonth(2);
 
     expect(mod).to.equal(14);
   });
 
   it('returns 3 for march', () => {
-    const mod = zellars.modifiedMonth(2012, 3);
+    const mod = zellers.modifiedMonth(3);
 
     expect(mod).to.equal(3);
 
@@ -54,19 +39,19 @@ describe("zeller's congruence", () => {
   });
 
   it('returns 1999 for january, 2000', () => {
-    const mod = zellars.modifiedYear(2000, 1);
+    const mod = zellers.modifiedYear(2000, 1);
 
     expect(mod).to.equal(1999);
   });
 
   it('returns 2011 for february, 2012', () => {
-    const mod = zellars.modifiedYear(2012, 2);
+    const mod = zellers.modifiedYear(2012, 2);
 
     expect(mod).to.equal(2011);
   });
 
   it('returns 2013 for march, 2013', () => {
-    const mod = zellars.modifiedYear(2013, 3);
+    const mod = zellers.modifiedYear(2013, 3);
 
     expect(mod).to.equal(2013);
   });
