@@ -1,12 +1,6 @@
+// shebang
 // #!/usr/bin/env node --harmony_destructuring
-
 'use strict';
 
-const [,, ...args] = process.argv;
+const zellers = require('./lib/zellers.js');
 
-if (ars.length === 2) {
-  const [month, year] = args;
-
-
-
-console.log(process.argv);
