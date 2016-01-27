@@ -55,15 +55,32 @@ describe("zeller's congruence", () => {
 
     expect(mod).to.equal(2013);
   });
+
+  it('returns the day of the week', () => {
+
+    expect(zellers.findDay(2000, 3, 1)).to.equal(3);
+    expect(zellers.findDay(2100, 3, 1)).to.equal(1);
+    expect(zellers.findDay(2200, 3, 2)).to.equal(0);
+    expect(zellers.findDay(2300, 3, 1)).to.equal(4);
+  });
+
+  it('outputs the month to the console', () => {
+    const mod = zellers.getTheMonth(1);
+    expect(mod).to.equal('January');
+  });
 });
+
+
     // .modifiedYear
     // 2000, 1 === 1999
     // 2012, 2 === 2011
     // 2013, 3 === 2013
 
     // .calculate
-    // 2014, 3, 2 === 1
-    // 2012, 1, 1 === 1
-    // 2012, 1, 12 === 5
-    // 1799, 2, 1 === 6
-    // 2000, 11, 1 === 4
+    // 2000, 3, 1 === 3
+    // 2100, 3, 1 === 1
+    // 2200, 3, 2 === 0
+    // 2300, 3, 1 === 4
+
+
+    // App shouldn't work prior to 1753 or past 9999.
