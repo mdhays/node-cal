@@ -15,9 +15,7 @@ describe('cal', () => {
 
 describe("zeller's congruence", () => {
   const zellers = require('../lib/zellers.js')
-  const month = require('../lib/month.js');
-  console.log(month.months.one);
-  const t31 = _.range([1], 32);
+  
   it('returns 13 for January', () => {
       const mod = zellers.modifiedMonth(1);
 
@@ -66,8 +64,30 @@ describe("zeller's congruence", () => {
     expect(zellers.findDay(2300, 3, 1)).to.equal(4);
   });
 
-  it('returns 31 days for the month of january', () => {
+
+  describe('months.js', () => {
+    // These are set up just like the range functions in month.js.
+    const t31 = _.range([1], 32);
+    const t30 = _.range([1], 31);
+    const t28 = _.range([1], 29);
+
+    const month = require('../lib/month.js');
+    console.log(month.months.one);
     
+    it('should return 31 days for january', () => {
+
+      expect(month.months.one[1]).to.eql(t31);
+    });
+
+    it('should return 28 days for february', () => {
+
+      expect(month.months.two[1]).to.eql(t28);
+    });
+
+    it('should return 30 for april', () => {
+
+      expect(month.months.four[1]).to.eql(t30);
+    });
   });
 });
 

@@ -4,5 +4,4 @@
 const zellers = require('./lib/zellers.js');
 const month = require('./lib/month.js');
 
-month.getTheMonth(0);
-
+console.log(month.months.one);
