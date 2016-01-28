@@ -63,33 +63,33 @@ describe("zeller's congruence", () => {
     expect(zellers.findDay(2200, 3, 2)).to.equal(0);
     expect(zellers.findDay(2300, 3, 1)).to.equal(4);
   });
+});
 
+describe('months.js', () => {
+  // These are set up just like the range functions in month.js.
+  const t31 = _.range([1], 32);
+  const t30 = _.range([1], 31);
+  const t28 = _.range([1], 29);
 
-  describe('months.js', () => {
-    // These are set up just like the range functions in month.js.
-    const t31 = _.range([1], 32);
-    const t30 = _.range([1], 31);
-    const t28 = _.range([1], 29);
+  const month = require('../lib/month.js');
+  console.log(month.months.one);
+  
+  it('should return 31 days for january', () => {
 
-    const month = require('../lib/month.js');
-    console.log(month.months.one);
-    
-    it('should return 31 days for january', () => {
+    expect(month.months.one[1]).to.eql(t31);
+  });
 
-      expect(month.months.one[1]).to.eql(t31);
-    });
+  it('should return 28 days for february', () => {
 
-    it('should return 28 days for february', () => {
+    expect(month.months.two[1]).to.eql(t28);
+  });
 
-      expect(month.months.two[1]).to.eql(t28);
-    });
+  it('should return 30 for april', () => {
 
-    it('should return 30 for april', () => {
-
-      expect(month.months.four[1]).to.eql(t30);
-    });
+    expect(month.months.four[1]).to.eql(t30);
   });
 });
+
 
 
     // .modifiedYear
