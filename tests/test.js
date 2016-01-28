@@ -1,7 +1,7 @@
 'use strict';
 const { expect } = require('chai');
 const cp = require('child_process');
-
+const _ = require('lodash');
 
 describe('cal', () => {
 
@@ -15,7 +15,9 @@ describe('cal', () => {
 
 describe("zeller's congruence", () => {
   const zellers = require('../lib/zellers.js')
-
+  const month = require('../lib/month.js');
+  console.log(month.months.one);
+  const t31 = _.range([1], 32);
   it('returns 13 for January', () => {
       const mod = zellers.modifiedMonth(1);
 
@@ -64,65 +66,8 @@ describe("zeller's congruence", () => {
     expect(zellers.findDay(2300, 3, 1)).to.equal(4);
   });
 
-  it('outputs january to the console', () => {
-    const mod = zellers.getTheMonth(0);
+  it('returns 31 days for the month of january', () => {
     
-    expect(mod).to.equal('January');
-  });
-  it('outputs february to the console', () => {
-    const mod = zellers.getTheMonth(1);
-    
-    expect(mod).to.equal('February');
-  });
-  it('outputs march to the console', () => {
-    const mod = zellers.getTheMonth(2);
-    
-    expect(mod).to.equal('March');
-  });
-  it('outputs april to the console', () => {
-    const mod = zellers.getTheMonth(3);
-    
-    expect(mod).to.equal('April');
-  });
-  it('outputs may to the console', () => {
-    const mod = zellers.getTheMonth(4);
-    
-    expect(mod).to.equal('May');
-  });
-  it('outputs june to the console', () => {
-    const mod = zellers.getTheMonth(5);
-    
-    expect(mod).to.equal('June');
-  });
-    it('outputs july to the console', () => {
-    const mod = zellers.getTheMonth(6);
-    
-    expect(mod).to.equal('July');
-  });
-  it('outputs august to the console', () => {
-    const mod = zellers.getTheMonth(7);
-    
-    expect(mod).to.equal('August');
-  });
-  it('outputs september to the console', () => {
-    const mod = zellers.getTheMonth(8);
-    
-    expect(mod).to.equal('September');
-  });
-  it('outputs october to the console', () => {
-    const mod = zellers.getTheMonth(9);
-    
-    expect(mod).to.equal('October');
-  });
-  it('outputs november to the console', () => {
-    const mod = zellers.getTheMonth(10);
-    
-    expect(mod).to.equal('November');
-  });
-  it('outputs january to the console', () => {
-    const mod = zellers.getTheMonth(11);
-    
-    expect(mod).to.equal('December');
   });
 });
 
