@@ -4,13 +4,26 @@
 const zellers = require('./lib/zellers.js');
 const month = require('./lib/month.js');
 
-// Returns the month (in this case, january).
-console.log(month.months.one[0]);
+
 
 // Takes the days in the array and returns a string.
 let days = month.months.one[1].toString();
 
+// Assign the returned string from days and removes the commas globally.
 let calDays = days.replace(/,/g, " ");
 
+// Gets the days of the week array and returns a string.
+let weekDays = month.weekdays.toString();
+
+// Removes the commas from the days of the week.
+let calWeekDays = weekDays.replace(/,/g, " ");
+
+
+
+
+// Returns the month (in this case, january).
+console.log(month.months.one[0]);
+
+console.log(calWeekDays);
 
 console.log(calDays);
