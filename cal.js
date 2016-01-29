@@ -8,7 +8,7 @@ const month = require('./lib/month.js');
 
 // Takes the days in the array and returns a string.
 let days = month.months.one[1].toString();
-
+console.log('this is the days of the week', days);
 // Assign the returned string from days and removes the commas globally.
 let calDays = days.replace(/,/g, " ");
 
@@ -26,4 +26,4 @@ console.log(month.months.one[0]);
 
 console.log(calWeekDays);
 
-console.log(calDays);
+console.log(month.monthDays);
